@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "rollup-build": "rollup -c && cp package.json ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1 && echo $name",
     "webpack-build": "webpack --config=webpack.config.js && cp package.json ./lib && cp app/index.js ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc",
     "semantic-release": "semantic-release",
     "cz": "git-cz"
