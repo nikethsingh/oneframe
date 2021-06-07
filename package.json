@@ -1,16 +1,17 @@
 {
   "name": "oneframe",
-  "version": "1.0.1",
+  "version": "1.0.1-development",
   "description": "testing oneframe",
   "main": "lib/index.js",
   "scripts": {
     "lb": "rollup -c && cp package.json ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --config=webpack.config.js && cp package.json ./lib && cp app/index.js ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc"
+    "bundle": "webpack --config=webpack.config.js && cp package.json ./lib && cp app/index.js ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikethsingh/oneframe.git"
+    "url": "https://github.com/nikethsingh/oneframe.git"
   },
   "author": "zedak",
   "license": "ISC",
@@ -58,6 +59,7 @@
     "regenerator-runtime": "^0.13.7",
     "rollup-plugin-cleanup": "^3.2.1",
     "webpack": "^4.46.0",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "semantic-release": "^17.4.3"
   }
 }
