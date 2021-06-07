@@ -1,6 +1,6 @@
 
 import React from 'react';
-import styled from 'styled-components';
+import styled,{createGlobalStyle} from 'styled-components';
 
 const Button = (props) => {
   const { children, title= "", ...partialProps } = props;

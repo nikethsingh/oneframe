@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 const path = require('path');
 var glob = require('glob');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: glob.sync('./app/**/!(*index).{js,jsx}').reduce(function(obj, el){
@@ -9,7 +10,7 @@ module.exports = {
    },{}),
     output: {
         filename: "[name].js",
-        libraryTarget: "umd",
+        libraryTarget: "commonjs2",
         path: path.resolve(__dirname, 'lib'),
     },
     externals: {
@@ -24,7 +25,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$|jsx/,
-                exclude: [/node_modules/,path.resolve(__dirname,'app/index.js')],
+                exclude: [/node_modules/],
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -35,5 +36,9 @@ module.exports = {
                   }
             }
         ]
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
     }
 }
