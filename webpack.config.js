@@ -1,17 +1,14 @@
 var webpack = require('webpack')
 const path = require('path');
-var glob = require('glob');
+const glob = require('glob');
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-    entry: glob.sync('./app/**/!(*index).{js,jsx}').reduce(function(obj, el){
-      obj[path.parse(el).name] = el;
-      return obj
-   },{}),
+    entry: "./src/index.js",
     output: {
-        filename: "[name].js",
-        libraryTarget: "commonjs2",
-        path: path.resolve(__dirname, 'lib'),
+      filename: 'index.js',
+      libraryTarget: "commonjs2",
+      path: path.resolve(__dirname, 'lib')
     },
     externals: {
         'react': 'react',
