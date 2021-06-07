@@ -1,17 +1,17 @@
 {
   "name": "oneframe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "testing oneframe",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config=webpack.config.js && cp package.json ./lib && babel ./lib/index.js -d ./lib --config-file=./.babelrc"
+    "build": "webpack --config=webpack.config.js && babel ./lib/index.js -d ./lib --config-file=./.babelrc"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/nikethsingh/oneframe.git"
   },
-  "files":  ["lib"],
+  "files":  ["lib/*"],
   "author": "zedak",
   "license": "ISC",
   "bugs": {
