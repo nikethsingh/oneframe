@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build
-      run: npm run webpack-build
+      run: npm run build
     - name: Semantic release
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
